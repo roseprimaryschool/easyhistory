@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Interactive History Explorer",
+  "description": "An interactive, visual, and highly animated platform to learn history through interactive timelines, cause-and-effect mapping, and engaging quizzes.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
