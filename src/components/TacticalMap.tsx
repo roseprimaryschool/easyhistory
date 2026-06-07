@@ -29,32 +29,47 @@ export default function TacticalMap({ mapData, accentColor }: TacticalMapProps) 
 
   const getThemeColors = (color: string) => {
     switch (color) {
-      case "indigo":
+      case "indigo": // Alexander the Great
         return {
           base: "indigo",
-          border: "border-indigo-100",
-          shadow: "shadow-indigo-100",
-          dot: "bg-indigo-600",
-          ring: "bg-indigo-500/30",
-          path: "stroke-indigo-400"
+          border: "border-amber-300/60",
+          shadow: "shadow-amber-100/30",
+          dot: "bg-gradient-to-b from-amber-400 via-amber-500 to-amber-600",
+          textColor: "text-amber-950",
+          ring: "bg-amber-400/20 border border-amber-300",
+          path: "stroke-amber-500/80",
+          strokeWidth: "3.5",
+          dashArray: "1, 6", // Beautiful dotted trail
+          activeDotClass: "ring-4 ring-amber-400/50 shadow-lg shadow-amber-300/50",
+          labelBg: "bg-amber-50 border border-amber-200/80 text-amber-900 shadow-sm"
         };
-      case "amber":
+      case "amber": // Persian Empire
         return {
           base: "amber",
-          border: "border-amber-100",
-          shadow: "shadow-amber-100",
-          dot: "bg-amber-600",
-          ring: "bg-amber-500/30",
-          path: "stroke-amber-400"
+          border: "border-amber-900/20",
+          shadow: "shadow-amber-850/20",
+          dot: "bg-gradient-to-b from-orange-500 via-amber-700 to-amber-800",
+          textColor: "text-amber-50",
+          ring: "bg-amber-500/30 border border-amber-400/50",
+          path: "stroke-orange-700/80",
+          strokeWidth: "3",
+          dashArray: "4, 6", // Caravan tracks
+          activeDotClass: "ring-4 ring-orange-500/50 shadow-lg shadow-orange-700/50",
+          labelBg: "bg-orange-50 border border-orange-200/80 text-orange-950 shadow-sm"
         };
-      case "sky":
+      case "sky": // Cold War
         return {
           base: "sky",
-          border: "border-sky-100",
-          shadow: "shadow-sky-100",
-          dot: "bg-sky-600",
-          ring: "bg-sky-500/30",
-          path: "stroke-sky-400"
+          border: "border-emerald-500/50",
+          shadow: "shadow-emerald-950/20",
+          dot: "bg-emerald-500 animate-pulse",
+          textColor: "text-slate-950",
+          ring: "bg-emerald-400/20 border border-emerald-500/60",
+          path: "stroke-emerald-400",
+          strokeWidth: "2.5",
+          dashArray: "3, 3", // Glowing radar track
+          activeDotClass: "ring-4 ring-emerald-400/60 shadow-lg shadow-emerald-500/50",
+          labelBg: "bg-slate-900/90 border border-slate-700 text-slate-100 shadow-md"
         };
       default:
         return {
@@ -62,8 +77,13 @@ export default function TacticalMap({ mapData, accentColor }: TacticalMapProps) 
           border: "border-gray-100",
           shadow: "shadow-gray-100",
           dot: "bg-gray-600",
-          ring: "bg-gray-500/30",
-          path: "stroke-gray-400"
+          textColor: "text-white",
+          ring: "bg-gray-500/30 border border-gray-400",
+          path: "stroke-gray-400",
+          strokeWidth: "2",
+          dashArray: "4, 4",
+          activeDotClass: "ring-4 ring-slate-400",
+          labelBg: "bg-slate-900 border border-slate-800 text-white"
         };
     }
   };
@@ -96,12 +116,12 @@ export default function TacticalMap({ mapData, accentColor }: TacticalMapProps) 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Interactive Tactical Canvas */}
-        <div className="lg:col-span-2 relative h-80 sm:h-96 rounded-xl overflow-hidden border border-slate-200 bg-amber-50/20 shadow-inner group/canvas">
+        <div className="lg:col-span-2 relative w-full aspect-[16/9] min-h-[290px] rounded-xl overflow-hidden border border-slate-200 bg-amber-50/20 shadow-md group/canvas">
           {mapData.mapImageUrl ? (
             <img 
               src={mapData.mapImageUrl} 
               alt={mapData.title}
-              className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.05] saturate-[1.1] transition-transform duration-[10s] ease-out group-hover/canvas:scale-105 pointer-events-none"
+              className="absolute inset-0 w-full h-full object-fill transition-transform duration-[12s] ease-out group-hover/canvas:scale-[1.015] pointer-events-none"
               referrerPolicy="no-referrer"
             />
           ) : (
@@ -112,14 +132,14 @@ export default function TacticalMap({ mapData, accentColor }: TacticalMapProps) 
           <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-900/5 to-slate-900/20 pointer-events-none z-10" />
 
           {/* Compass Rose Indicator Grid marker */}
-          <div className="absolute top-4 right-4 text-[10px] font-mono text-slate-900/80 bg-white/95 backdrop-blur-xs py-1 px-2.5 rounded-md border border-slate-200/80 shadow-sm select-none flex flex-col items-end z-10">
+          <div className="absolute top-4 right-4 text-[9px] font-mono text-slate-900/80 bg-white/95 backdrop-blur-xs py-1 px-2 rounded-md border border-slate-200/60 shadow-sm select-none flex flex-col items-end z-10">
             <span className="font-bold tracking-wider">CHRONO-MAPPING SYS</span>
             <span className="text-slate-500">N 33&deg; 56&apos; E 51&deg; 22&apos;</span>
           </div>
 
-          <div className="absolute bottom-4 left-4 text-[10px] font-mono text-slate-900/80 bg-white/95 backdrop-blur-xs py-1 px-2.5 rounded-md border border-slate-200/80 shadow-sm select-none flex items-center space-x-1.5 z-10">
-            <div className={`w-2 h-2 rounded-full ${colors.dot} animate-pulse pointer-events-none`} />
-            <span className="font-medium">Interact with nodes to track positions</span>
+          <div className="absolute bottom-4 left-4 text-[9px] font-mono text-slate-900/80 bg-white/95 backdrop-blur-xs py-1 px-2 rounded-md border border-slate-200/60 shadow-sm select-none flex items-center space-x-1 z-10">
+            <div className={`w-1.5 h-1.5 rounded-full ${colors.dot} pointer-events-none`} />
+            <span className="font-medium text-[9px]">Tap markers to track history</span>
           </div>
 
           {/* SVG Connection Paths Vector Overlay */}
@@ -136,11 +156,12 @@ export default function TacticalMap({ mapData, accentColor }: TacticalMapProps) 
                   x2={`${nextPoint.x}%`}
                   y2={`${nextPoint.y}%`}
                   className={`${colors.path}`}
-                  strokeWidth="2.5"
-                  strokeDasharray="4 6"
+                  strokeWidth={colors.strokeWidth}
+                  strokeDasharray={colors.dashArray}
+                  strokeLinecap="round"
                   initial={{ pathLength: 0 }}
                   animate={{ pathLength: 1 }}
-                  transition={{ duration: 1, delay: index * 0.2 }}
+                  transition={{ duration: 1.2, delay: index * 0.15 }}
                 />
               );
             })}
@@ -157,30 +178,32 @@ export default function TacticalMap({ mapData, accentColor }: TacticalMapProps) 
                 style={{ left: `${point.x}%`, top: `${point.y}%`, transform: 'translate(-50%, -50%)' }}
                 id={`map-node-${point.id}`}
               >
-                <div className="relative flex items-center justify-center">
+                <div className="relative flex flex-col items-center justify-center">
                   
+                  {/* Permanently Visible Name Tag Label */}
+                  <div className={`absolute -top-7 px-1.5 py-0.5 rounded text-[8px] sm:text-[9px] font-mono font-bold tracking-tight whitespace-nowrap transition-all duration-300 pointer-events-none leading-none ${colors.labelBg} ${
+                    isSelected ? "scale-105 ring-1 ring-slate-900/20" : "opacity-80 group-hover:opacity-100 group-hover:scale-105"
+                  }`}>
+                    {point.name}
+                  </div>
+
                   {/* Outer pulsating radial ring when active */}
                   {isSelected && (
                     <motion.div
                       layoutId="activeMapRing"
-                      className={`absolute w-10 h-10 rounded-full ${colors.ring}`}
-                      animate={{ scale: [1, 1.4, 1] }}
+                      className={`absolute w-8 h-8 rounded-full ${colors.ring}`}
+                      animate={{ scale: [1, 1.35, 1] }}
                       transition={{ repeat: Infinity, duration: 2 }}
                     />
                   )}
 
                   {/* Node inner indicator */}
-                  <div className={`w-5 h-5 rounded-full border-2 border-white flex items-center justify-center shadow transition-all duration-300 ${
+                  <div className={`w-4 h-4 sm:w-5 sm:h-5 rounded-full border-2 border-white flex items-center justify-center shadow transition-all duration-300 ${
                     isSelected 
-                      ? `${colors.dot} scale-125` 
-                      : "bg-slate-500 group-hover:bg-indigo-500 group-hover:scale-110"
+                      ? `${colors.dot} ${colors.activeDotClass}` 
+                      : "bg-slate-700/90 group-hover:bg-slate-900 group-hover:scale-110"
                   }`}>
-                    <span className="text-[9px] text-white font-mono font-bold">{index + 1}</span>
-                  </div>
-
-                  {/* Tiny floating geographic title tag */}
-                  <div className="absolute top-6 whitespace-nowrap bg-slate-900/90 text-white text-[9px] uppercase font-mono tracking-wider py-0.5 px-1.5 rounded shadow opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none">
-                    {point.name}
+                    <span className="text-[8px] sm:text-[9px] text-white font-mono font-bold leading-none">{index + 1}</span>
                   </div>
                 </div>
               </button>

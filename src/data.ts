@@ -30,7 +30,7 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
           id: 1,
           name: "Macedonia",
           x: 10,
-          y: 35,
+          y: 30,
           year: "336 BCE",
           title: "The Launchpad",
           description: "Alexander is declared King after his father's assassination. He quickly subdues city-states and prepares to cross into Asia."
@@ -38,8 +38,8 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
         {
           id: 2,
           name: "Gordium",
-          x: 28,
-          y: 42,
+          x: 26,
+          y: 34,
           year: "333 BCE",
           title: "Cutting the Knot",
           description: "Legend holds whoever untied the complex knot of Gordium would rule Asia. Unable to undo it, Alexander sliced it cleanly with his sword."
@@ -47,8 +47,8 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
         {
           id: 3,
           name: "Alexandria, Egypt",
-          x: 32,
-          y: 75,
+          x: 24,
+          y: 64,
           year: "331 BCE",
           title: "Pharaoh & Founder",
           description: "Welcomed as a liberator from Persian rule, Alexander is crowned Pharaoh and founds Alexandria, the future vault of global knowledge."
@@ -56,8 +56,8 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
         {
           id: 4,
           name: "Gaugamela",
-          x: 52,
-          y: 46,
+          x: 46,
+          y: 36,
           year: "331 BCE",
           title: "The Ultimate Clash",
           description: "Outnumbered 5-to-1, Alexander executes a brilliant diagonal charge, shattering the Persian royal guard and forcing King Darius III to flee."
@@ -65,8 +65,8 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
         {
           id: 5,
           name: "Persepolis",
-          x: 68,
-          y: 65,
+          x: 62,
+          y: 55,
           year: "330 BCE",
           title: "Burning of the Palace",
           description: "The ceremonial capital of Persia is captured. In a wild night of celebrating (or calculated revenge), the beautiful palace of Xerxes goes up in flames."
@@ -74,8 +74,8 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
         {
           id: 6,
           name: "Hydaspes River",
-          x: 90,
-          y: 60,
+          x: 86,
+          y: 46,
           year: "326 BCE",
           title: "Edge of the Map",
           description: "Deep in modern Pakistan, Alexander defeats King Porus' war elephants but faces monsoon rains. Exhausted and homesick, his armies stage a peaceful mutiny, demanding to go home."
@@ -232,45 +232,45 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
       points: [
         {
           id: 1,
-          name: "Susa",
-          x: 50,
-          y: 48,
-          year: "550 BCE",
-          title: "The Heart of Power",
-          description: "Susa served as the primary administrative capital of Persia, housing the great imperial treasuries."
+          name: "Sardis",
+          x: 14,
+          y: 34,
+          year: "500 BCE",
+          title: "Anatolia Frontier",
+          description: "The western end of the Royal Road in Anatolia. This active city linked Persia directly to Mediterranean trade and Greek markets."
         },
         {
           id: 2,
           name: "Babylon",
           x: 42,
-          y: 52,
+          y: 46,
           year: "539 BCE",
-          title: "The Cyrus Cylinder Delivery",
+          title: "The Cyrus Cylinder",
           description: "Cyrus the Great marches in peacefully. Instead of pillaging, he frees exiled groups (including the Jews) and decrees freedom of worship."
         },
         {
           id: 3,
-          name: "Sardis",
-          x: 15,
-          y: 35,
-          year: "500 BCE",
-          title: "Western Frontier",
-          description: "The western end of the Royal Road in Anatolia. This active city linked Persia directly to Mediterranean trade and Greek markets."
+          name: "Susa",
+          x: 56,
+          y: 44,
+          year: "550 BCE",
+          title: "The Administrative Core",
+          description: "Susa served as the primary administrative capital of Persia, housing the great imperial treasuries."
         },
         {
           id: 4,
           name: "Persepolis",
-          x: 65,
-          y: 65,
+          x: 74,
+          y: 60,
           year: "518 BCE",
           title: "Rituals and Reliefs",
           description: "Built by Darius the Great, this ceremonial capital hosted spring festivals. Beautiful wall carvings showed emissaries from 28 nations."
         }
       ],
       connections: [
-        { fromId: 3, toId: 2 },
-        { fromId: 2, toId: 1 },
-        { fromId: 1, toId: 4 }
+        { fromId: 1, toId: 2 },
+        { fromId: 2, toId: 3 },
+        { fromId: 3, toId: 4 }
       ]
     },
     timeline: [
@@ -411,44 +411,44 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
       points: [
         {
           id: 1,
-          name: "Checkpoint Charlie, Berlin",
-          x: 20,
-          y: 45,
-          year: "1961",
-          title: "A Divided City",
-          description: "Tanks stand muzzle-to-muzzle as the Soviet Union constructs the Berlin Wall, dividing families for almost three decades."
+          name: "Washington D.C.",
+          x: 12,
+          y: 38,
+          year: "1947",
+          title: "The Containment Strategy",
+          description: "US capital coordinates the Marshall Plan and NATO alliances, monitoring nuclear arsenals and drafting global containment lines."
         },
         {
           id: 2,
-          name: "Washington D.C. & Moscow",
-          x: 45,
-          y: 20,
-          year: "1947",
-          title: "The Capitals",
-          description: "Two rival frameworks: the Capitalist US Treasury and the Command Soviet Kremlin, monitoring each other's nuclear button."
+          name: "Havana, Cuba",
+          x: 15,
+          y: 55,
+          year: "1962",
+          title: "Brink of Nuclear War",
+          description: "US spy planes spot Soviet nuclear missile silos being assembled 90 miles from Florida, leading to a terrifying 13-day naval blockade."
         },
         {
           id: 3,
-          name: "Havana, Cuba",
-          x: 35,
-          y: 65,
-          year: "1962",
-          title: "Brink of Doom",
-          description: "US spy planes spot Soviet nuclear missiles being built 90 miles from Florida, leading to a tense, terrifying 13-day naval blockade."
+          name: "Checkpoint Charlie, Berlin",
+          x: 48,
+          y: 35,
+          year: "1961",
+          title: "Divided Capital Stand-off",
+          description: "American and Soviet tanks stand muzzle-to-muzzle in central Berlin as the German capital is split by a concrete security barrier."
         },
         {
           id: 4,
           name: "Korean Peninsula",
-          x: 80,
-          y: 50,
+          x: 86,
+          y: 44,
           year: "1950",
-          title: "The First Proxy Fire",
-          description: "Back-and-forth military shifts along the 38th parallel solidifies Truman's containment stance, leaving Korea permanently divided today."
+          title: "The First Proxy War",
+          description: "High-intensity battles along the 38th Parallel solidify Truman's security posture, leaving Korea partitioned to this day."
         }
       ],
       connections: [
-        { fromId: 2, toId: 1 },
-        { fromId: 1, toId: 3 },
+        { fromId: 1, toId: 2 },
+        { fromId: 2, toId: 3 },
         { fromId: 3, toId: 4 }
       ]
     },

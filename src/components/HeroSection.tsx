@@ -14,11 +14,11 @@ export default function HeroSection({ onStartQuest }: HeroSectionProps) {
       <img 
         src={historyVintageBg} 
         alt="Vintage History Backdrop" 
-        className="absolute inset-0 w-full h-full object-cover object-center filter opacity-30 brightness-[0.25] contrast-[1.1] saturate-[0.6] pointer-events-none"
+        className="absolute inset-0 w-full h-full object-cover object-center filter opacity-[0.55] sepia-[0.35] brightness-[0.5] contrast-[1.1] saturate-[0.8] transition-opacity duration-500 pointer-events-none"
         referrerPolicy="no-referrer"
       />
       {/* Absolute dark gradient overlay to guarantee copy contrast */}
-      <div className="absolute inset-0 bg-gradient-to-b from-indigo-950/10 via-slate-950/65 to-slate-950 pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-slate-950/50 to-slate-950/90 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto text-center px-4 sm:px-6 relative z-10">
         {/* Animated Feature Pill */}
