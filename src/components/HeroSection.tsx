@@ -1,6 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Sparkles, Zap, ArrowRight, Layers, Compass, Brain } from "lucide-react";
+import historyVintageBg from "../assets/images/history_vintage_bg_1780828116384.png";
 
 interface HeroSectionProps {
   onStartQuest: () => void;
@@ -11,7 +12,7 @@ export default function HeroSection({ onStartQuest }: HeroSectionProps) {
     <div className="relative overflow-hidden bg-slate-950 text-white py-20 sm:py-28 border-b border-slate-900">
       {/* High-quality background image with historical montage elements */}
       <img 
-        src="/src/assets/images/history_vintage_bg_1780828116384.png" 
+        src={historyVintageBg} 
         alt="Vintage History Backdrop" 
         className="absolute inset-0 w-full h-full object-cover object-center filter opacity-30 brightness-[0.25] contrast-[1.1] saturate-[0.6] pointer-events-none"
         referrerPolicy="no-referrer"
