@@ -12,9 +12,11 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
     bgGradient: "from-indigo-50 to-indigo-100/50",
     badgeBg: "bg-indigo-100 text-indigo-700 dark:bg-indigo-900/30 dark:text-indigo-300",
     icon: "Sword",
+    illustrationUrl: "/src/assets/images/alexander_painting_1780828134049.png",
     map: {
       title: "The March of Conquest",
       description: "Follow Alexander's epic campaign route across 17,000 miles, completely reshaping the borders of the ancient world.",
+      mapImageUrl: "/src/assets/images/alexander_campaign_map_1780828068834.png",
       points: [
         {
           id: 1,
@@ -214,9 +216,11 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
     bgGradient: "from-amber-50 to-amber-100/50",
     badgeBg: "bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-305",
     icon: "Crown",
+    illustrationUrl: "/src/assets/images/persian_palace_painting_1780828154116.png",
     map: {
       title: "The Imperial Network",
       description: "Explore the vast satrapy administration and the incredible, rapid Royal Road connecting Susa to the Mediterranean.",
+      mapImageUrl: "/src/assets/images/persian_empire_map_1780828085143.png",
       points: [
         {
           id: 1,
@@ -391,9 +395,11 @@ export const HISTORY_TOPICS: HistoryTopic[] = [
     bgGradient: "from-sky-50 to-sky-100/50",
     badgeBg: "bg-sky-100 text-sky-700 dark:bg-sky-900/30 dark:text-sky-300",
     icon: "Globe",
+    illustrationUrl: "/src/assets/images/cold_war_illustration_1780828169805.png",
     map: {
       title: "The Cold War Fault Lines",
       description: "Visualizing the hotspots of proxy operations, split capital standoffs, and revolutionary borders.",
+      mapImageUrl: "/src/assets/images/cold_war_map_1780828100939.png",
       points: [
         {
           id: 1,

@@ -23,6 +23,7 @@ export interface MapData {
   points: MapPoint[];
   connections: MapConnection[];
   regions?: { name: string; path: string; color: string }[]; // visual reference
+  mapImageUrl?: string;
 }
 
 export interface TimelineEvent {
@@ -73,4 +74,5 @@ export interface HistoryTopic {
   causeEffect: CauseEffectNode[];
   people: KeyPerson[];
   quiz: QuizQuestion[];
+  illustrationUrl?: string;
 }

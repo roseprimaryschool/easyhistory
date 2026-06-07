@@ -306,7 +306,7 @@ export default function App() {
       {/* Footer credits disclaimer (No Tech-Larping / Anti-AI-slop compliance) */}
       <footer className="py-12 border-t border-slate-100 bg-white/40 mt-20 text-center">
         <p className="font-mono text-[10px] text-slate-400 tracking-wider">
-          CHRONOVISUALS ACADEMIC ENGINE &bull; DEVELOPED FOR RAPID RETENTION &bull; 2026
+          EASYHISTORY ACADEMIC ENGINE &bull; DEVELOPED FOR RAPID RETENTION &bull; 2026
         </p>
       </footer>
 

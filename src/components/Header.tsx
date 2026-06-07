@@ -23,7 +23,7 @@ export default function Header({ topics, selectedTopicId, onSelectTopic }: Heade
           </div>
           <div>
             <span className="block font-display font-bold text-lg text-gray-900 leading-tight tracking-tight">
-              ChronoVisuals
+              EasyHistory
             </span>
             <span className="block font-mono text-[10px] text-indigo-600 font-medium">
               FAST &bull; VISUAL &bull; HISTORY

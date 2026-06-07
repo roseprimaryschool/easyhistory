@@ -96,17 +96,30 @@ export default function TacticalMap({ mapData, accentColor }: TacticalMapProps) 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         
         {/* Interactive Tactical Canvas */}
-        <div className="lg:col-span-2 relative h-80 sm:h-96 rounded-xl overflow-hidden border border-slate-150 map-grid-pattern bg-slate-50">
+        <div className="lg:col-span-2 relative h-80 sm:h-96 rounded-xl overflow-hidden border border-slate-200 bg-amber-50/20 shadow-inner group/canvas">
+          {mapData.mapImageUrl ? (
+            <img 
+              src={mapData.mapImageUrl} 
+              alt={mapData.title}
+              className="absolute inset-0 w-full h-full object-cover object-center filter brightness-[0.95] contrast-[1.05] saturate-[1.1] transition-transform duration-[10s] ease-out group-hover/canvas:scale-105 pointer-events-none"
+              referrerPolicy="no-referrer"
+            />
+          ) : (
+            <div className="absolute inset-0 map-grid-pattern bg-slate-50" />
+          )}
           
+          {/* Aesthetic vignette vignette overlay for vintage maps / espionage screens */}
+          <div className="absolute inset-0 bg-radial-gradient from-transparent via-slate-900/5 to-slate-900/20 pointer-events-none z-10" />
+
           {/* Compass Rose Indicator Grid marker */}
-          <div className="absolute top-4 right-4 text-[10px] font-mono text-slate-400 select-none flex flex-col items-end">
-            <span>CHRONO-MAPPING SYS</span>
-            <span>N 33&deg; 56&apos; E 51&deg; 22&apos;</span>
+          <div className="absolute top-4 right-4 text-[10px] font-mono text-slate-900/80 bg-white/95 backdrop-blur-xs py-1 px-2.5 rounded-md border border-slate-200/80 shadow-sm select-none flex flex-col items-end z-10">
+            <span className="font-bold tracking-wider">CHRONO-MAPPING SYS</span>
+            <span className="text-slate-500">N 33&deg; 56&apos; E 51&deg; 22&apos;</span>
           </div>
 
-          <div className="absolute bottom-4 left-4 text-[10px] font-mono text-slate-400 select-none flex items-center space-x-1">
-            <div className="w-2.5 h-2.5 rounded-full bg-slate-300 pointer-events-none" />
-            <span>Click any node on the map of campaigns</span>
+          <div className="absolute bottom-4 left-4 text-[10px] font-mono text-slate-900/80 bg-white/95 backdrop-blur-xs py-1 px-2.5 rounded-md border border-slate-200/80 shadow-sm select-none flex items-center space-x-1.5 z-10">
+            <div className={`w-2 h-2 rounded-full ${colors.dot} animate-pulse pointer-events-none`} />
+            <span className="font-medium">Interact with nodes to track positions</span>
           </div>
 
           {/* SVG Connection Paths Vector Overlay */}

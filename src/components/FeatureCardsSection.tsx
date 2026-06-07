@@ -65,12 +65,25 @@ export default function FeatureCardsSection({ topics, onSelectTopic }: FeatureCa
                 className="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-xl hover:border-slate-200 transition-all duration-300 flex flex-col h-full group"
                 id={`feature-card-${topic.id}`}
               >
-                {/* Visual Top Header of the Card */}
-                <div className={`h-3 bg-gradient-to-r ${
-                  topic.accentColor === "indigo" ? "from-indigo-600 to-violet-500" :
-                  topic.accentColor === "amber" ? "from-amber-500 to-orange-500" :
-                  "from-sky-500 to-indigo-500"
-                }`} />
+                {/* Visual Top Header of the Card with High-Quality Painting */}
+                <div className="h-48 overflow-hidden relative border-b border-slate-150 bg-slate-950">
+                  {topic.illustrationUrl ? (
+                    <img 
+                      src={topic.illustrationUrl} 
+                      alt={topic.title}
+                      className="w-full h-full object-cover object-center group-hover:scale-110 transition-transform duration-700 ease-out filter brightness-[0.88] contrast-[1.05] saturate-[1.12]"
+                      referrerPolicy="no-referrer"
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-slate-200 animate-pulse" />
+                  )}
+                  {/* Subtle dynamic border decoration */}
+                  <div className={`absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r ${
+                    topic.accentColor === "indigo" ? "from-indigo-600 to-violet-500" :
+                    topic.accentColor === "amber" ? "from-amber-500 to-orange-500" :
+                    "from-sky-500 to-indigo-500"
+                  }`} />
+                </div>
 
                 {/* Content Area */}
                 <div className="p-6 sm:p-8 flex-grow flex flex-col justify-between">
